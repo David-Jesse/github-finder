@@ -18,3 +18,9 @@ export interface User {
     type: string;
     site_admin: boolean;
   }
+
+export interface GithubContextType {
+  loading: boolean;
+  users: User[]
+}
+

@@ -1,5 +1,7 @@
 import {useEffect, useState} from 'react'
 import { User } from '../../shared/Types'
+import Spinner from '../Spinner'
+import UserItem from './UserItem'
 
 // type Props = {}
 
@@ -16,9 +18,10 @@ const UserResults = () => {
       headers: {
         Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`
       }
-    })
-
-    const data = await response.json()
+    }
+  )
+   
+  const data = await response.json()
 
     setUsers(data)
     setLoading(false)
@@ -28,12 +31,12 @@ const UserResults = () => {
     return (
       <div className='grid grid-cols-1 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2'>
         {users.map((user) => (
-          <h3>{user.login}</h3>
+          <UserItem key={user.id} user={user} login={''} avatar_url={''}/>
         ))}
       </div>
     )
   } else {
-    return <h3>Loading...</h3>
+    return <Spinner/>
   }
 }
 

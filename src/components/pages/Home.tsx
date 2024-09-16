@@ -1,4 +1,4 @@
-import UserResults from "../components/users/UserResults"
+import UserResults from "../layout/users/UserResults"
 
 // type Props = {}
 

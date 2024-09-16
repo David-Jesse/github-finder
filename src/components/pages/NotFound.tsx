@@ -1,8 +1,9 @@
 import {FaHome} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
-type Props = {}
 
-const NotFound = (props: Props) => {
+//type Props = {}
+
+const NotFound = () => {
   return (
     <div className='hero'>
         <div className="text-center hero-content">
